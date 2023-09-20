@@ -13,12 +13,13 @@ public class Sieve {
 		boolean[]list = new boolean[n];
 		boolean sieve = false; 
 		boolean isPrime = false; 
+		int runs = 0;
 		int j;
-		int p = 2;
 		while(!sieve) {
-			p += p;
 			for(int i = p; i < list.length; i+=p) {
-				list[i] = true;
+				if(runs > 0) {
+					list[i] = true;
+				}
 			}
 			j = 1;
 			if(p <= Math.sqrt(n)) {
